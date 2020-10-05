@@ -1,5 +1,5 @@
 import { ackermann, ackermann_simple } from "./ackermann.ts";
-console.log("Now running ackermann PRO - developed by JustAnotherJavaProgrammer");
+console.log("Now running Ackermann-Pro - developed by JustAnotherJavaProgrammer");
 const n = parseInt(Deno.args[0], 10);
 const m = parseInt(Deno.args[1], 10);
 const logging = Deno.args.includes("-l") || Deno.args.includes("--logging");
