@@ -1,15 +1,31 @@
-import { ackermann, ackermann_simple } from "./ackermann.ts";
+import { ackermann_bigint } from "./ackermann.ts";
 console.log("Now running Ackermann-Pro - developed by JustAnotherJavaProgrammer");
-const n = parseInt(Deno.args[0], 10);
-const m = parseInt(Deno.args[1], 10);
+if (Deno.args[0].includes(".") || Deno.args[1].includes(".")) {
+    invalidArgumentError();
+}
+if (Deno.args.length < 2) {
+    incorrectUsage();
+}
+let n = 0n;
+let m = 0n;
+try {
+    n = BigInt(Deno.args[0]);
+    m = BigInt(Deno.args[1]);
+} catch (e) {
+    incorrectUsage();
+}
 const logging = Deno.args.includes("-l") || Deno.args.includes("--logging");
-if (Deno.args.length < 2 || Number.isNaN(n) || Number.isNaN(m)) {
+if (n < 0n || m < 0n) {
+    invalidArgumentError();
+}
+console.log(ackermann_bigint(n, m, logging).toString());
+
+function incorrectUsage() {
     console.info("Usage: ackermann [n] [m] OPTIONS\nValid options are:\n-logging, -l\tenable logging of intermediate steps");
     Deno.exit(1);
 }
-if (Deno.args[0].includes(".") || Deno.args[1].includes(".") || n < 0 || m < 0) {
+
+function invalidArgumentError() {
     console.error("ERROR: The ackermann function only accepts positive integers.");
     Deno.exit(2);
 }
-
-console.log(ackermann(parseInt(Deno.args[0]), parseInt(Deno.args[1]), logging));
