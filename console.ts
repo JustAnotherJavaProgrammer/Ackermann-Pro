@@ -1,10 +1,10 @@
 import { ackermann_bigint } from "./ackermann.ts";
 console.log("Now running Ackermann-Pro - developed by JustAnotherJavaProgrammer");
-if (Deno.args[0].includes(".") || Deno.args[1].includes(".")) {
-    invalidArgumentError();
-}
 if (Deno.args.length < 2) {
     incorrectUsage();
+}
+if (Deno.args[0].includes(".") || Deno.args[1].includes(".")) {
+    invalidArgumentError();
 }
 let n = 0n;
 let m = 0n;
