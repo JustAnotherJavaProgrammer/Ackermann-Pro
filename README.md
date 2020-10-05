@@ -7,7 +7,7 @@ You can use this script directly via Deno. To do that, first install Deno by fol
 
 You can now enter the following command in your terminal to automatically install Ackermann-Pro and add it to your PATH:
 ```
-deno install https://raw.githubusercontent.com/JustAnotherJavaProgrammer/Ackermann-Pro/master/console.ts
+deno install -n ackermann https://raw.githubusercontent.com/JustAnotherJavaProgrammer/Ackermann-Pro/master/console.ts
 ```
 
 #### Command line options
