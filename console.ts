@@ -21,7 +21,7 @@ if (n < 0n || m < 0n) {
 console.log(ackermann_bigint(n, m, logging).toString());
 
 function incorrectUsage() {
-    console.info("Usage: ackermann [n] [m] OPTIONS\nValid options are:\n-logging, -l\tenable logging of intermediate steps");
+    console.info("Usage: ackermann [n] [m] OPTIONS\nValid options are:\n--logging, -l\tenable logging of intermediate steps");
     Deno.exit(1);
 }
 

@@ -5,6 +5,9 @@
 		}
 	],
 	"settings": {
-		"editor.defaultFormatter": "denoland.vscode-deno"
+		"editor.defaultFormatter": "denoland.vscode-deno",
+		"spellright.language": [
+			"en"
+		]
 	}
 }
